@@ -1,4 +1,4 @@
-import {Body, Controller, Post, Req, UseGuards, ValidationPipe} from '@nestjs/common';
+import {Body, Controller, Get, Post, Res, UseGuards, ValidationPipe} from '@nestjs/common';
 import {AuthCredentialsDto} from "./dto/auth-credentials.dto";
 import {AuthService} from "./auth.service";
 import {AuthGuard} from '@nestjs/passport';
@@ -25,7 +25,14 @@ export class AuthController {
 
     @Post('/test')
     @UseGuards(AuthGuard())
-    test(@GetUser() user: User){
+    test(@GetUser() user: User) {
         console.log(user)
+    }
+
+    @Get('/')
+    logIn(@Res() res) {
+        res.render('index.twig', {
+            message: "Hello World"
+        });
     }
 }

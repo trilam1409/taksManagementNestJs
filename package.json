@@ -18,7 +18,9 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "build:fe:dev": "encore dev -w",
+    "build:fe:prod": "encore production"
   },
   "dependencies": {
     "@nestjs/common": "^7.5.1",
@@ -27,18 +29,24 @@
     "@nestjs/passport": "^7.1.5",
     "@nestjs/platform-express": "^7.5.1",
     "@nestjs/typeorm": "^7.1.5",
+    "@symfony/webpack-encore": "^0.33.0",
     "@types/bcrypt": "^3.0.0",
     "@types/passport-jwt": "^3.0.3",
+    "@types/twig": "^1.12.5",
     "bcrypt": "^5.0.0",
     "class-transformer": "^0.3.1",
     "class-validator": "^0.12.2",
     "config": "^3.3.3",
+    "core-js": "^3.8.1",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "pg": "^8.5.1",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^6.6.3",
+    "sass": "^1.30.0",
+    "sass-loader": "^10.1.0",
+    "twig": "^1.15.4",
     "typeorm": "^0.2.29"
   },
   "devDependencies": {
